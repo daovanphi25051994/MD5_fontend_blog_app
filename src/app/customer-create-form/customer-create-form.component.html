@@ -1,0 +1,55 @@
+<h2>Simple Blog</h2>
+
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      ID
+      <br>
+      <input type="text" formControlName="id">
+    </label>
+  </div>
+  <div *ngIf="customerForm.get('id').invalid && customerForm.get('id').touched" style="color: red">
+    id is required and min length is 1
+  </div>
+  <div>
+    <label>
+      Username:
+      <br>
+      <input type="text" formControlName="username">
+    </label>
+  </div>
+  <div *ngIf="customerForm.get('username').invalid && customerForm.get('username').touched" style="color: red">
+    user name is required and min length is 6
+  </div>
+  <div>
+    <label>
+     Password:
+      <br>
+      <input type="text" formControlName="password">
+    </label>
+  </div>
+  <div *ngIf="customerForm.get('password').invalid && customerForm.get('password').touched" style="color: red">
+    Password is required and min length is 6
+  </div>
+  <div>
+    <label>
+      address:
+      <br>
+      <input type="text" formControlName="address">
+    </label>
+  </div>
+  <div *ngIf="customerForm.get('address').invalid && customerForm.get('address').touched" style="color: red">
+    address name is required and min length is 1
+  </div>
+  <div>
+    <label>
+      phoneNumber:
+      <br>
+      <input type="text" formControlName="phoneNumber">
+    </label>
+  </div>
+  <div *ngIf="customerForm.get('phoneNumber').invalid && customerForm.get('phoneNumber').touched" style="color: red">
+    phoneNumber name is required and min length is 10
+  </div>
+  <button type="submit">Submit</button>
+</form>

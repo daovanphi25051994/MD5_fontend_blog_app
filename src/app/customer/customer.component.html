@@ -1,0 +1,39 @@
+<nav>
+  <a routerLink="/customers/create">Create Customer</a>
+</nav>
+<router-outlet></router-outlet>
+<!--<ul>-->
+<!--  <li *ngFor="let customer of customers">-->
+<!--    <p>{{customer.id}}</p>-->
+<!--    <p>{{customer.username}}</p>-->
+<!--    <p>{{customer.password}}</p>-->
+<!--    <p>{{customer.address}}</p>-->
+<!--    <p>{{customer.phoneNumber}}</p>-->
+
+<!--&lt;!&ndash;    <a [routerLink]="['/blog', customer.id, 'edit']">Edit</a>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <button (click)="deleteCustomer(i)">Delete</button>&ndash;&gt;-->
+<!--  </li>-->
+<!--</ul>-->
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let customer of customers;index as i">
+    <td>{{ customer.id }}</td>
+    <td>{{ customer.username }}</td>
+    <td>{{ customer.password }}</td>
+    <td>{{ customer.address }}</td>
+    <td>{{ customer.phoneNumber }}</td>
+    <td><a [routerLink]="['/customer', customer.id, 'edit']">Edit</a></td>
+    <td><button (click)="deleteCustomer(i)">Delete</button></td>
+  </tr>
+</table>
+
